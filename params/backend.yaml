@@ -1,0 +1,39 @@
+%YAML:1.0
+
+# Segment params
+segment_size: 10
+
+# Segment database params
+max_segments: 4
+landmark_overlap_thresh: 20
+use_incremental: 0
+database_entropy_thresh: -1e1 #-1.5e1 # TODO: Tune this based on 1-segment
+
+# Noise model params
+reproj_sigma: 1.0
+stereo_use_epipolar: 0 # 0 means reprojection factors with landmarks
+epipolar_use_sampson: 1
+epipolar_sigma: 1e-2
+odom_sigma:  1e-3
+pose_prior_sigma: 5e-6
+extrinsic_translation_sigma: 1e8 # Negative sigma means no prior
+
+# Covariance normalize
+marg_cov_rotation_sigma: 1
+marg_cov_translation_sigma: 1
+
+# Incremental relinearization params (rotation, translation)
+relin_extrinsics: [1e-5, 1e-5]
+relin_poses: [1e-5, 1e-5]
+relin_landmarks: 1e-2
+
+# Triangulation params
+# Note: 
+  # If enable_EPI is enabled: 
+    # rank_tol thresholds last singular value of Hessian in nonlinear optimization
+  # else triangulation only uses DLT:
+    # rank_tol thresholds singular value from A matrix (algebraic error equations)
+rank_tol: 0.0001
+enable_EPI: 1
+landmark_dist_thresh: 50 # Negative means none
+max_reproj_thresh: 5 # Negative means none

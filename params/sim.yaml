@@ -1,0 +1,11 @@
+%YAML:1.0
+
+# Sigmas are for w,v of SE(3) tangent space (rotation component first)
+
+# Odometry
+odom_sigmas: [1e-3, 1e-3]
+odom_seed: 10
+
+# Extrinsics
+extrinsics_sigmas: [3e-2, 3e-2]
+extrinsics_seed: 10

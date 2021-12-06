@@ -1,0 +1,9 @@
+/build/
+/.vscode/
+/matlab/videos/
+/matlab/figures/
+.DS_Store
+*.m~
+/data/
+/matlab/**/*.png
+/figures/
