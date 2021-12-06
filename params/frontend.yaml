@@ -1,0 +1,37 @@
+%YAML:1.0
+
+# Feature detection
+grid_size: [4, 3]
+num_features_per_cell: 3
+min_dist: 10
+
+# Tracker
+# 0 KLT, 1 ORB, 2 KLT+ORB
+tracker_type: 0
+
+# Optical flow params
+max_level: 3
+max_iter: 30
+two_way_thresh: 0.5 # 0.5 sq thresh
+
+window_size: 15
+convergence_eps: 0.01
+min_eig_thresh: 0.001
+two_way_tracking: 1
+
+
+# Outlier Rejection
+ransac_thresh: 0.0005
+ransac_prob: 0.999
+# model:  {0: 7-point}, {1: 5-point}
+model: 1
+
+# Keyframing
+# keyframe_type type: {0: entropy, 1: feature, 2: motion}
+keyframe_type: 0
+keyframe_prob: 0.9
+
+# Undistortion params
+undistort_max_iter: 100
+undistort_tol: 1e-5
+undistort_throw_err: 0

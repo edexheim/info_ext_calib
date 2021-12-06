@@ -1,0 +1,21 @@
+%YAML:1.0
+
+# Frequnecy
+use_stereo: 1
+keyframe_skip: 3 # cannot be 0
+
+# Which pairs to check
+stereo_pairs: 
+  [ 
+    [0,1]
+  ]
+
+# Feature detection
+grid_size: [10, 10]
+num_features_per_cell: 5
+min_dist: 5
+
+# Feature pruning
+sampson_thresh: 5e-1
+distance_ratio: 0.8
+min_inliers: 10
