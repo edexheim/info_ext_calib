@@ -161,7 +161,8 @@ Point3 triangulatePoint3Custom(
     try {
       point = triangulateNonlinearCustom(intrinsics, poses, measurements, point, noise_model, rank_tol);
     }
-    catch (const tbb::captured_exception& ex) {
+    // catch (const tbb::captured_exception& ex) {
+    catch (const gtsam::IndeterminantLinearSystemException& ex) {
       throw(TriangulationUnderconstrainedException());
     }
   }

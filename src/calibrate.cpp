@@ -300,8 +300,9 @@ int main(int argc, char** argv) {
   backend_vis_queue.set_capacity(5);
 
   // Initialize pangolin
-  auto& window = pangolin::CreateWindowAndBind("Main", 1920/2, 1080/2, 
-      pangolin::Params({{"HIGHRES", "true"}}) );
+  // auto& window = pangolin::CreateWindowAndBind("Main", 1920/2, 1080/2, 
+  //     pangolin::Params({{"HIGHRES", "true"}}) );
+  auto& window = pangolin::CreateWindowAndBind("Main", 1920/2, 1080/2);
   glEnable(GL_DEPTH_TEST);
   pangolin::View& main_display = pangolin::CreateDisplay().SetBounds(
         0.2, 1.0, pangolin::Attach::Pix(UI_WIDTH), 1.0);

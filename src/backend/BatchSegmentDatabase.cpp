@@ -67,7 +67,7 @@ bool BatchSegmentDatabase::optimizeStep() {
   // check if we're already close enough
   if (currentError <= params.errorTol) {
     if (params.verbosity >= gtsam::NonlinearOptimizerParams::ERROR)
-      cout << "Exiting, as error = " << currentError << " < " << params.errorTol << endl;
+      std::cout << "Exiting, as error = " << currentError << " < " << params.errorTol << std::endl;
     converged = true;
     return converged;
   }
@@ -76,7 +76,7 @@ bool BatchSegmentDatabase::optimizeStep() {
   if (params.verbosity >= gtsam::NonlinearOptimizerParams::VALUES)
     optimizer_->values().print("Initial values");
   if (params.verbosity >= gtsam::NonlinearOptimizerParams::ERROR)
-    cout << "Initial error: " << currentError << endl;
+    std::cout << "Initial error: " << currentError << std::endl;
 
   // Iterative loop
   double newError = currentError; // used to avoid repeated calls to error()
@@ -101,7 +101,7 @@ bool BatchSegmentDatabase::optimizeStep() {
   if (params.verbosity >= gtsam::NonlinearOptimizerParams::VALUES)
     optimizer_->values().print("newValues");
   if (params.verbosity >= gtsam::NonlinearOptimizerParams::ERROR)
-    cout << "newError: " << newError << endl;
+    std::cout << "newError: " << newError << std::endl;
 
   // std::cout <<  currentError << " " << newError << std::endl;
   if (gtsam::checkConvergence(params.relativeErrorTol, params.absoluteErrorTol, params.errorTol,

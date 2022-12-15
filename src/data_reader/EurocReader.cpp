@@ -2,6 +2,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/core/persistence.hpp>
 #include <fstream>
+#include <filesystem>
 
 EurocReader::EurocReader(std::string path)
   : DataReader(path, 2)
@@ -43,7 +44,6 @@ bool EurocReader::initialize() {
                                         0, 0, 1 );
   fs1["distortion_coefficients"] >> distortions_[1];
   fs1.release();
-
 
   // get file lists
   std::vector<FileList> img_lists_tmp(num_cam_);

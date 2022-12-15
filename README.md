@@ -10,7 +10,7 @@ GTSAM commit f6ef1d6d2cdb84286befc3ce686e32ff4d653a6b (https://github.com/borgla
 OpenCV: 4.0.0 \
 TBB: 2020.3 \
 Boost: 1.75.0 \
-Pangolin: https://github.com/stevenlovegrove/Pangolin
+Pangolin commit bcf41ec8b2853eb132dbe5cbe65ca8eade31846e: https://github.com/stevenlovegrove/Pangolin
 
 ## Examples
 

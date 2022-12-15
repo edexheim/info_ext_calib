@@ -136,7 +136,7 @@ void Segment::calcInfoContent(
       marg_info_[ind_info_t] = E_t_norm.inverse();
       calib_info_[ind_info_R] = info_metrics::dOpt(E_R_norm);
       calib_info_[ind_info_t] = info_metrics::dOpt(E_t_norm);
-      std::cout << "Info content: " << scientific << calib_info_[ind_info_R] << " " << calib_info_[ind_info_t]  << std::endl;
+      std::cout << "Info content: " << std::scientific << calib_info_[ind_info_R] << " " << calib_info_[ind_info_t]  << std::endl;
     }
   }
   catch (const tbb::captured_exception& ex) {

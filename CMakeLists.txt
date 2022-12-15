@@ -11,7 +11,7 @@ find_package(Eigen3 3.3 REQUIRED)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 find_package(TBB 4.4 COMPONENTS tbb tbbmalloc)
 find_package(GTSAM REQUIRED)
-find_package(pangolin REQUIRED)
+find_package(Pangolin REQUIRED)
 
 include_directories(
     include/
@@ -34,4 +34,4 @@ target_link_libraries(${PROJECT_NAME}
  )
 
 add_executable(calibrate src/calibrate.cpp)
-target_link_libraries(calibrate PUBLIC ${PROJECT_NAME} pangolin)
+target_link_libraries(calibrate PUBLIC ${PROJECT_NAME} pango_core pango_opengl pango_display pango_plot)
